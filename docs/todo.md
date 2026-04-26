@@ -8,9 +8,13 @@
 5. UI responsive 
     - carousel ui (auto)
     - Sound
+    - User name not allign with page
 6. Fix
     - Form phai validate tat ca cac field.
     - click button arrow down -> move to form section
     - Them title cho countdown
     - Them language
-    
+7. Front end:
+- Font chữ dễ nhìn
+- Chèn ảnh kỉ niệm hust
+- Time range: from 9am - 12am

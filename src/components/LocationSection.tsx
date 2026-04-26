@@ -6,16 +6,16 @@ const LocationSection = () => {
       <div className="max-w-5xl mx-auto px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <h2 className="text-5xl font-bold leading-tight">Gặp nhau tại Thư viện Tạ Quang Bửu</h2>
-            <p className="text-slate-400 text-lg">9h sáng - Ngày 09 tháng 05 năm 2026. Một khởi đầu mới cho hành trình vươn tầm thế giới.</p>
+            <h2 className="text-5xl font-bold leading-tight">Sự khởi đầu cho nhiều hành trình mới</h2>
+            <p className="text-slate-400 text-lg">Hẹn gặp anh/chị/bạn vào lúc:</p>
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-red-600/20 rounded-xl"><Clock className="text-red-600" /></div>
-                <span>09:00 AM</span>
+                <span>09 - 11:59 AM</span>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-red-600/20 rounded-xl"><MapPin className="text-red-600" /></div>
-                <span>Đài phun nước Bách Khoa - khuôn viên quảng trường trước tòa nhà C1</span>
+                <span>Đài phun nước, Quảng trường C1 Đại học Bách Khoa Hà Nội</span>
               </div>
             </div>
             <button

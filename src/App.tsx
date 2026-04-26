@@ -18,7 +18,7 @@ import LocationSection from "./components/LocationSection";
 import PhotoAlbum from "./components/PhotoAlbum";
 import RsvpGuestbookSection from "./components/RsvpGuestbookSection";
 
-const userName = "Cao Sỹ Dương";
+const userName = "Cao Sy Duong Graduation Day";
 const graduationDate = new Date("2026-05-09T09:00:00").getTime();
 
 const albumPhotos = [
@@ -236,7 +236,7 @@ const App = () => {
           </div>
         </div>
         <h2 className="text-2xl font-serif italic text-slate-800 mb-2">
-          Lời mời từ
+        You are cordially invited to
         </h2>
         <h1 className="text-4xl font-bold text-red-600 mb-8 uppercase tracking-widest">
           {userName}
@@ -247,11 +247,11 @@ const App = () => {
         >
           <div className="absolute inset-0 bg-red-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           <span className="relative z-10 flex items-center">
-            KÍCH HOẠT TRẢI NGHIỆM <Play size={16} className="ml-2" />
+            Ready for it <Play size={16} className="ml-2" />
           </span>
         </button>
         <p className="mt-8 text-slate-400 font-mono text-xs uppercase tracking-widest">
-          Huawei 5.5G/6G Technology Exhibition
+          One love, one future
         </p>
       </div>
     );
@@ -283,14 +283,16 @@ const App = () => {
           <div className="flex justify-center space-x-6 mb-8 text-red-600 opacity-60">
             <Cpu size={24} /> <Radio size={24} /> <Zap size={24} />
           </div>
-          <p className="text-red-600 font-mono tracking-[0.5em] mb-4 uppercase font-bold text-sm">
-            Beyond Connecting // 6G Era
+          <p className="text-black-600 font-serif tracking-[0.25em] mb-4 font-bold text-sm">
+            Dear, 
+            To all my friends, colleagues, and loved ones who have been part of this incredible journey 
+            You are officially invited to join 
           </p>
           <h1 className="text-7xl md:text-[10rem] font-black text-slate-900 leading-none mb-4 tracking-tighter">
             HUST <span className="text-red-600">26</span>
           </h1>
           <h2 className="text-3xl md:text-5xl font-serif italic text-slate-700 mb-12">
-            Lễ Tốt Nghiệp Cao Sỹ Dương
+            Cao Sy Duong Graduation Day
           </h2>
           <div className="flex flex-wrap justify-center gap-4 text-slate-500 font-mono text-sm uppercase">
             <span className="px-4 py-2 bg-slate-100 rounded-full flex items-center">
@@ -325,10 +327,10 @@ const App = () => {
 
       <footer className="py-12 text-center border-t border-slate-100">
         <p className="text-slate-400 font-mono text-xs tracking-[0.4em] mb-4">
-          HUAWEI TECHNOLOGIES CO., LTD // 6G RESEARCH
+          Hanoi University of Science and Technology
         </p>
         <p className="text-slate-900 font-bold uppercase">
-          Cao Sỹ Dương - Bách Khoa Hà Nội
+          One love, One future
         </p>
       </footer>
     </div>

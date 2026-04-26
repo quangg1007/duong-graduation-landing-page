@@ -51,11 +51,11 @@ const RsvpGuestbookSection = ({
     <section className="py-24">
       <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-12">
         <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
-          <h3 className="text-2xl font-bold mb-6">Đăng ký tham dự</h3>
+          <h3 className="text-2xl font-bold mb-6">Sự có mặt của bạn là niềm vinh dự lớn nhất đối với mình, hẹn bạn tại Bách Khoa!</h3>
           <form className="space-y-4" onSubmit={onRsvpSubmit}>
             <input
               className="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-red-500 bg-white"
-              placeholder="Họ và tên của bạn"
+              placeholder="Bạn tên gì zay"
               value={rsvpData.name}
               onChange={(e) => setRsvpData({ ...rsvpData, name: e.target.value })}
             />
@@ -68,7 +68,7 @@ const RsvpGuestbookSection = ({
             <textarea
               className="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-red-500 bg-white resize-none"
               rows={4}
-              placeholder="Lời nhắn của bạn cho Dương"
+              placeholder="Bạn có lời nhắn nhủ gì hem?"
               value={rsvpData.message}
               onChange={(e) => setRsvpData({ ...rsvpData, message: e.target.value })}
             />
@@ -78,16 +78,16 @@ const RsvpGuestbookSection = ({
               onChange={(e) => setRsvpData({ ...rsvpData, attending: e.target.value as 'yes' | 'no' | '' })}
             >
               <option value="" disabled>
-                Bạn sẽ đến cùng mình chứ
+                Tham gia cùng mình nha!
               </option>
-              <option value="yes">Chắc chắn tham dự</option>
-              <option value="no">Rất tiếc, mình bận</option>
+              <option value="yes">Chắc chắn òi, sure bro</option>
+              <option value="no">Sẽ xuất hiện bất ngờ hihi ~~</option>
             </select>
             <button
               type="submit"
               className="w-full py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-red-600 transition-colors shadow-lg"
             >
-              GỬI THÔNG TIN
+              Gửi thông tin ne!
             </button>
           </form>
           {rsvpFeedback && (
@@ -99,7 +99,6 @@ const RsvpGuestbookSection = ({
           <div className="space-y-4">
             <div className="mb-4">
               <h3 className="text-xl font-bold text-slate-900">Recently message</h3>
-              <p className="text-sm text-slate-500">Anonymous candidates share their message. The avatar is the first character of their first name.</p>
             </div>
             {messages.map((message) => {
               const firstName = message.name ? message.name.split(' ')[0] : 'Anonymous';

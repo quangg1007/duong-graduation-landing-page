@@ -23,16 +23,16 @@ const graduationDate = new Date("2026-05-09T09:00:00").getTime();
 
 const albumPhotos = [
   {
-    url: "assert/photo-1773332585771-5c9c5fa642d1.avif",
-    caption: "Kỷ niệm ngày đầu vào trường",
+    url: "assets/album-1.jpeg",
+    caption: "Overnight with me",
   },
   {
-    url: "assert/photo-1773423386509-b57f17224b30.avif",
-    caption: "Những đêm trực lab cùng đồ án",
+    url: "assets/album-2.jpeg",
+    caption: "Ngày lên thớt cuối cùng",
   },
   {
-    url: "assert/photo-1770010314670-464a6d221858.avif",
-    caption: "Những đêm trực lab cùng đồ án",
+    url: "assets/album-3.jpeg",
+    caption: "Tạm biệt HUST",
   },
 ];
 
@@ -93,7 +93,7 @@ const App = () => {
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioUrl =
-    "assert/bombinsound-gentle-peaceful-gentle-music-33-second-499510.mp3";
+    "assets/có hẹn với thanh xuân MONSTAR GREY D - Lời bài hát tải nhạc Zing.mp3";
 
   useEffect(() => {
     const timer = window.setInterval(
@@ -238,7 +238,7 @@ const App = () => {
         <h2 className="text-2xl font-serif italic text-slate-800 mb-2">
         You are cordially invited to
         </h2>
-        <h1 className="text-4xl font-bold text-red-600 mb-8 uppercase tracking-widest">
+        <h1 className="text-center text-4xl font-bold text-red-600 mb-8 uppercase tracking-widest">
           {userName}
         </h1>
         <button
@@ -283,7 +283,7 @@ const App = () => {
           <div className="flex justify-center space-x-6 mb-8 text-red-600 opacity-60">
             <Cpu size={24} /> <Radio size={24} /> <Zap size={24} />
           </div>
-          <p className="text-black-600 font-serif tracking-[0.25em] mb-4 font-bold text-sm">
+          <p className="text-black-600 font-serif tracking-[0.25em] mb-4 px-8 font-bold text-sm">
             Dear, 
             To all my friends, colleagues, and loved ones who have been part of this incredible journey 
             You are officially invited to join 
@@ -291,17 +291,9 @@ const App = () => {
           <h1 className="text-7xl md:text-[10rem] font-black text-slate-900 leading-none mb-4 tracking-tighter">
             HUST <span className="text-red-600">26</span>
           </h1>
-          <h2 className="text-3xl md:text-5xl font-serif italic text-slate-700 mb-12">
-            Cao Sy Duong Graduation Day
+          <h2 className="text-center text-3xl md:text-5xl font-serif italic text-slate-700 mb-12">
+            {userName}
           </h2>
-          <div className="flex flex-wrap justify-center gap-4 text-slate-500 font-mono text-sm uppercase">
-            <span className="px-4 py-2 bg-slate-100 rounded-full flex items-center">
-              <Wifi size={14} className="mr-2" /> 5.5G Tech Specialist
-            </span>
-            <span className="px-4 py-2 bg-slate-100 rounded-full flex items-center">
-              <Globe size={14} className="mr-2" /> Huawei Infrastructure
-            </span>
-          </div>
         </div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronDown className="text-red-600" />

@@ -17,7 +17,7 @@ const PhotoAlbum = ({ photos }: Props) => {
           <div className="text-red-600">
             <span className="sr-only">Album</span>
           </div>
-          <h3 className="text-4xl font-bold text-slate-900 tracking-tight">Kỷ Niệm Bách Khoa</h3>
+          <h3 className="text-4xl font-bold text-slate-900 tracking-tight">Kỷ niệm Bách Khoa</h3>
         </div>
         <div className="flex space-x-6 overflow-x-auto pb-12 scrollbar-hide snap-x">
           {photos.map((photo, index) => (

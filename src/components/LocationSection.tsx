@@ -1,4 +1,4 @@
-import { Clock, MapPin, GraduationCap, Navigation } from "lucide-react";
+import { Clock, MapPin, Navigation, Phone } from "lucide-react";
 
 const LocationSection = () => {
   return (
@@ -18,8 +18,7 @@ const LocationSection = () => {
                   <Clock className="text-red-600" />
                 </div>
                 <div className="flex flex-col">
-                  <span>09 - 11:59 AM</span>
-                  <span>09/05/2026</span>
+                  <span>09 - 11:59 AM sáng 09/05/2026</span>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -29,6 +28,16 @@ const LocationSection = () => {
                 <span>
                   Đài phun nước, Quảng trường C1 Đại học Bách Khoa Hà Nội
                 </span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="p-3 bg-red-600/20 rounded-xl">
+                  <Phone className="text-red-600" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-semibold">Liên hệ:</span>
+                  <span>Cao Dương: 0357023426</span>
+                  <span>Minh Quang: 0911348859</span>
+                </div>
               </div>
             </div>
             <button

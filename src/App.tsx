@@ -294,6 +294,20 @@ const App = () => {
           <h2 className="text-center text-3xl md:text-5xl font-serif italic text-slate-700 mb-12">
             {userName}
           </h2>
+          <div className="mx-auto max-w-4xl text-left rounded-3xl border border-red-100 bg-white/80 p-8 text-slate-700 shadow-xl shadow-red-100/50 backdrop-blur-sm md:text-lg">
+            <p className="mb-4 italic text-slate-800">
+              “Bốn năm Bách Khoa không hề nhẹ nhàng: những ngày dài, đêm trắng và những mùa thi thật hối hả. Nhưng chính những lúc ấy đã dạy tôi đứng vững, tin vào bản thân và trưởng thành hơn. Nhìn lại hành trình đã qua, bản thân đã học và nhận được rất nhiều, không chỉ là kiến thức, kỹ năng, trải nghiệm mà còn có cả tình bạn và thanh xuân thật đáng nhớ.
+            </p>
+            <p className="mb-4 italic text-slate-800">
+              Hành trình khép lại, mở ra nhiều chương mới. Tốt nghiệp là cánh cửa đến tương lai, nơi bản thân mang theo ước mơ và niềm tin để tiếp tục cố gắng.
+            </p>
+            <p className="font-semibold text-slate-900 tracking-tight">
+              Tôi cũng muốn gửi lời cảm ơn chân thành nhất đến thầy cô – những người đã tận tâm dìu dắt, đến bạn bè – những người đã cùng tôi chia sẻ từng khoảnh khắc vui buồn, và đến gia đình – điểm tựa vững chắc luôn âm thầm ủng hộ tôi suốt hành trình này."
+            </p>
+            <p className="mt-6 text-right font-bold text-red-600">
+              ~ Cao Sỹ Dương ET-E4 K66 ~
+            </p>
+          </div>
         </div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronDown className="text-red-600" />

@@ -2,7 +2,7 @@ import { Clock, MapPin, Navigation, Phone } from "lucide-react";
 
 const LocationSection = () => {
   return (
-    <section className="py-24 bg-slate-950 text-white rounded-[3rem] mx-4 shadow-2xl">
+    <section className="py-12 bg-slate-950 text-white rounded-[3rem] mx-4 shadow-2xl">
       <div className="max-w-5xl mx-auto px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">

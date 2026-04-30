@@ -11,7 +11,6 @@ import {
   Zap,
   Radio,
 } from "lucide-react";
-import AudioControlButton from "./components/AudioControlButton";
 import { supabase } from "./lib/supabaseClient";
 import CountdownSection from "./components/CountdownSection";
 import LocationSection from "./components/LocationSection";
@@ -228,7 +227,7 @@ const App = () => {
 
   if (!showContent) {
     return (
-      <div className="h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
+      <div className="bg-slate-50 flex flex-col items-center justify-center p-4 h-screen">
         <div className="w-24 h-24 mb-8 relative">
           <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-20" />
           <div className="relative bg-white rounded-full p-4 shadow-2xl border border-red-100">
@@ -260,13 +259,8 @@ const App = () => {
   return (
     <div className="min-h-screen bg-white text-slate-800 selection:bg-red-100 overflow-x-hidden">
       <audio ref={audioRef} loop src={audioUrl} />
-      <AudioControlButton
-        audioRef={audioRef}
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-      />
 
-      <section className="relative h-screen flex items-center justify-center pt-20">
+      <section className="relative flex items-center justify-center pt-10">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-red-50/50 skew-x-12 transform origin-top translate-x-20" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(220,38,38,0.05)_0%,transparent_50%)]" />
@@ -291,7 +285,7 @@ const App = () => {
           <h1 className="text-7xl md:text-[10rem] font-black text-slate-900 leading-none mb-4 tracking-tighter">
             HUST <span className="text-red-600">26</span>
           </h1>
-          <h2 className="text-center text-3xl md:text-5xl font-serif italic text-slate-700 mb-12">
+          <h2 className="text-center text-3xl md:text-5xl font-serif italic text-slate-700 mb-6">
             {userName}
           </h2>
           <div className="mx-auto max-w-4xl text-left rounded-3xl border border-red-100 bg-white/80 p-8 text-slate-700 shadow-xl shadow-red-100/50 backdrop-blur-sm md:text-lg">

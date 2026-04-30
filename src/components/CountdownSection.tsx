@@ -20,7 +20,7 @@ const CountdownSection = ({ timeLeft }: Props) => {
   ];
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-12 bg-slate-50">
       <div className="flex flex-col max-w-4xl mx-auto px-4 gap-4">
         <h3 className="text-4xl font-bold text-slate-900 tracking-tight text-center">Đếm ngược về ngày tốt nghiệp</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-8">

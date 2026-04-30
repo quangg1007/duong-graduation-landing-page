@@ -11,7 +11,7 @@ type Props = {
 
 const PhotoAlbum = ({ photos }: Props) => {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-12 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center space-x-4 mb-12">
           <div className="text-red-600">

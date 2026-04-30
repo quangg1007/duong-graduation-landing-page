@@ -48,7 +48,7 @@ const RsvpGuestbookSection = ({
   messages,
 }: Props) => {
   return (
-    <section className="py-24">
+    <section className="py-12">
       <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-12">
         <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
           <h3 className="text-2xl font-bold mb-6">Sự có mặt của bạn là niềm vinh dự lớn nhất đối với mình, hẹn bạn tại Bách Khoa!</h3>

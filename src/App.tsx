@@ -16,6 +16,7 @@ import CountdownSection from "./components/CountdownSection";
 import LocationSection from "./components/LocationSection";
 import PhotoAlbum from "./components/PhotoAlbum";
 import RsvpGuestbookSection from "./components/RsvpGuestbookSection";
+import UploadPage from "./components/UploadPage";
 
 const userName = "Cao Sy Duong Graduation Day";
 const graduationDate = new Date("2026-05-09T09:00:00").getTime();
@@ -42,11 +43,6 @@ type TimeLeft = {
   seconds: number;
 };
 
-type GuestbookData = {
-  name: string;
-  message: string;
-};
-
 type RsvpData = {
   name: string;
   //   email: string | null;
@@ -61,7 +57,6 @@ type Message = {
   date: string;
 };
 
-const initialGuestbook: GuestbookData = { name: "", message: "" };
 const initialRsvp: RsvpData = { name: "", message: "", attending: "" };
 
 function calculateTimeLeft(): TimeLeft {
@@ -83,12 +78,11 @@ const App = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [rsvpData, setRsvpData] = useState<RsvpData>(initialRsvp);
-  const [guestbookData, setGuestbookData] =
-    useState<GuestbookData>(initialGuestbook);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isGeneratingWish, setIsGeneratingWish] = useState(false);
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   const [rsvpFeedback, setRsvpFeedback] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<"home" | "upload">("home");
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioUrl =
@@ -135,6 +129,10 @@ const App = () => {
     setIsPlaying(true);
   };
 
+  const handleOpenUploadPage = () => {
+    setCurrentPage("upload");
+  };
+
   useEffect(() => {
     if (showContent && audioRef.current && isPlaying) {
       audioRef.current.play().catch(() => {
@@ -142,36 +140,6 @@ const App = () => {
       });
     }
   }, [showContent, isPlaying]);
-
-  //   Option using AI for generate Message.
-  //   const generateWishWithAI = async () => {
-  //     if (!guestbookData.name) return;
-  //     setIsGeneratingWish(true);
-
-  //     const apiKey = import.meta.env.VITE_GOOGLE_API_KEY ?? '';
-  //     const prompt = `Viết lời chúc tốt nghiệp cho Cao Sỹ Dương, Kỹ sư tại Huawei, chuyên ngành 5.5G/6G. Người gửi: ${guestbookData.name}. Phong cách: Sang trọng, công nghệ tương lai, dùng thuật ngữ viễn thông hiện đại.`;
-
-  //     try {
-  //       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
-  //         method: 'POST',
-  //         headers: { 'Content-Type': 'application/json' },
-  //         body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-  //       });
-  //       const data = await res.json();
-  //       const text = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-  //       setGuestbookData({ ...guestbookData, message: text || 'Xin lỗi, không thể tạo lời chúc lúc này.' });
-  //     } catch (error) {
-  //       setGuestbookData({ ...guestbookData, message: 'Kết nối 6G không ổn định, hãy thử lại!' });
-  //     } finally {
-  //       setIsGeneratingWish(false);
-  //     }
-  //   };
-
-  //   const addGuestbookMessage = () => {
-  //     if (!guestbookData.name || !guestbookData.message) return;
-  //     setMessages((prev) => [{ id: Date.now().toString(), name: guestbookData.name, message: guestbookData.message, date: 'Vừa xong' }, ...prev]);
-  //     setGuestbookData(initialGuestbook);
-  //   };
 
   const handleRsvpSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -256,6 +224,10 @@ const App = () => {
     );
   }
 
+  if (currentPage === "upload") {
+    return <UploadPage onBack={() => setCurrentPage("home")} />;
+  }
+
   return (
     <div className="min-h-screen bg-white text-slate-800 selection:bg-red-100 overflow-x-hidden">
       <audio ref={audioRef} loop src={audioUrl} />
@@ -274,6 +246,15 @@ const App = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+          <div className="flex justify-end mb-6">
+            <button
+              type="button"
+              onClick={handleOpenUploadPage}
+              className="rounded-full border border-red-600 bg-white px-5 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-600 hover:text-white"
+            >
+              Upload Image
+            </button>
+          </div>
           <div className="flex justify-center space-x-6 mb-8 text-red-600 opacity-60">
             <Cpu size={24} /> <Radio size={24} /> <Zap size={24} />
           </div>
@@ -321,11 +302,6 @@ const App = () => {
         rsvpSubmitted={rsvpSubmitted}
         rsvpFeedback={rsvpFeedback}
         onRsvpSubmit={handleRsvpSubmit}
-        guestbookData={guestbookData}
-        setGuestbookData={setGuestbookData}
-        isGeneratingWish={isGeneratingWish}
-        // generateWishWithAI={generateWishWithAI}
-        // addGuestbookMessage={addGuestbookMessage}
         messages={messages}
       />
 

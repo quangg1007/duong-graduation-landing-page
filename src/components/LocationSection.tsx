@@ -43,7 +43,7 @@ const LocationSection = () => {
             <button
               onClick={() =>
                 window.open(
-                  "https://www.google.com/maps/search/?api=1&query=Thư+viện+Tạ+Quang+Bửu+Bách+Khoa",
+                  "https://maps.app.goo.gl/YWAKVh49ftn5h5Hy5",
                   "_blank",
                 )
               }

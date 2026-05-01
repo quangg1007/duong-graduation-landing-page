@@ -280,7 +280,7 @@ const App = () => {
           <p className="text-left text-black-600 font-serif tracking-[0.15em] mb-4 px-8 font-bold text-sm">
             Dear, 
           </p>
-          <p className="text-justify text-black-600 font-serif tracking-[0.15em] mb-4 px-8 font-bold text-sm">
+          <p className="text-left text-black-600 font-serif tracking-[0.15em] mb-4 px-8 font-bold text-sm">
             To all my friends, colleagues, and loved ones who have been part of this incredible journey. 
           </p>
           <p className="text-left text-black-600 font-serif tracking-[0.15em] mb-4 px-8 font-bold text-sm">

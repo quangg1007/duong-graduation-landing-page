@@ -1,11 +1,6 @@
 import { Send, Sparkles } from 'lucide-react';
 import type { Dispatch, FormEvent, SetStateAction } from 'react';
 
-type GuestbookData = {
-  name: string;
-  message: string;
-};
-
 type RsvpData = {
   name: string;
 //   email: string;
@@ -26,11 +21,6 @@ type Props = {
   rsvpSubmitted: boolean;
   rsvpFeedback: string | null;
   onRsvpSubmit: (event: FormEvent<HTMLFormElement>) => void;
-  guestbookData: GuestbookData;
-  setGuestbookData: Dispatch<SetStateAction<GuestbookData>>;
-  isGeneratingWish: boolean;
-//   generateWishWithAI: () => Promise<void>;
-//   addGuestbookMessage: () => void;
   messages: Message[];
 };
 
@@ -40,11 +30,6 @@ const RsvpGuestbookSection = ({
   rsvpSubmitted,
   rsvpFeedback,
   onRsvpSubmit,
-  guestbookData,
-  setGuestbookData,
-  isGeneratingWish,
-//   generateWishWithAI,
-//   addGuestbookMessage,
   messages,
 }: Props) => {
   return (
@@ -58,24 +43,21 @@ const RsvpGuestbookSection = ({
               placeholder="Bạn tên gì zay"
               value={rsvpData.name}
               onChange={(e) => setRsvpData({ ...rsvpData, name: e.target.value })}
+              required
             />
-            {/* <input
-              className="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-red-500 bg-white"
-              placeholder="Email của bạn"
-              value={rsvpData.email}
-              onChange={(e) => setRsvpData({ ...rsvpData, email: e.target.value })}
-            /> */}
             <textarea
               className="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-red-500 bg-white resize-none"
               rows={4}
               placeholder="Bạn có lời nhắn nhủ gì hem?"
               value={rsvpData.message}
               onChange={(e) => setRsvpData({ ...rsvpData, message: e.target.value })}
+              required
             />
             <select
               className="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-red-500 bg-white"
               value={rsvpData.attending}
               onChange={(e) => setRsvpData({ ...rsvpData, attending: e.target.value as 'yes' | 'no' | '' })}
+              required
             >
               <option value="" disabled>
                 Tham gia cùng mình nha!

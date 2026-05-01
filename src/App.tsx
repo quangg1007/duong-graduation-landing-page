@@ -83,10 +83,8 @@ const App = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [rsvpData, setRsvpData] = useState<RsvpData>(initialRsvp);
-  const [guestbookData, setGuestbookData] =
     useState<GuestbookData>(initialGuestbook);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [isGeneratingWish, setIsGeneratingWish] = useState(false);
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   const [rsvpFeedback, setRsvpFeedback] = useState<string | null>(null);
 
@@ -143,38 +141,15 @@ const App = () => {
     }
   }, [showContent, isPlaying]);
 
-  //   Option using AI for generate Message.
-  //   const generateWishWithAI = async () => {
-  //     if (!guestbookData.name) return;
-  //     setIsGeneratingWish(true);
-
-  //     const apiKey = import.meta.env.VITE_GOOGLE_API_KEY ?? '';
-  //     const prompt = `Viết lời chúc tốt nghiệp cho Cao Sỹ Dương, Kỹ sư tại Huawei, chuyên ngành 5.5G/6G. Người gửi: ${guestbookData.name}. Phong cách: Sang trọng, công nghệ tương lai, dùng thuật ngữ viễn thông hiện đại.`;
-
-  //     try {
-  //       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
-  //         method: 'POST',
-  //         headers: { 'Content-Type': 'application/json' },
-  //         body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-  //       });
-  //       const data = await res.json();
-  //       const text = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-  //       setGuestbookData({ ...guestbookData, message: text || 'Xin lỗi, không thể tạo lời chúc lúc này.' });
-  //     } catch (error) {
-  //       setGuestbookData({ ...guestbookData, message: 'Kết nối 6G không ổn định, hãy thử lại!' });
-  //     } finally {
-  //       setIsGeneratingWish(false);
-  //     }
-  //   };
-
-  //   const addGuestbookMessage = () => {
-  //     if (!guestbookData.name || !guestbookData.message) return;
-  //     setMessages((prev) => [{ id: Date.now().toString(), name: guestbookData.name, message: guestbookData.message, date: 'Vừa xong' }, ...prev]);
-  //     setGuestbookData(initialGuestbook);
-  //   };
-
   const handleRsvpSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!rsvpData.name.trim() || !rsvpData.message.trim() || !rsvpData.attending) {
+      setRsvpSubmitted(false);
+      setRsvpFeedback("Vui lòng hoàn thành tất cả các trường RSVP trước khi gửi.");
+      return;
+    }
+
     setRsvpFeedback("Đang gửi RSVP...");
     setRsvpSubmitted(false);
 
@@ -321,11 +296,6 @@ const App = () => {
         rsvpSubmitted={rsvpSubmitted}
         rsvpFeedback={rsvpFeedback}
         onRsvpSubmit={handleRsvpSubmit}
-        guestbookData={guestbookData}
-        setGuestbookData={setGuestbookData}
-        isGeneratingWish={isGeneratingWish}
-        // generateWishWithAI={generateWishWithAI}
-        // addGuestbookMessage={addGuestbookMessage}
         messages={messages}
       />
 

@@ -18,7 +18,7 @@ const LocationSection = () => {
                   <Clock className="text-red-600" />
                 </div>
                 <div className="flex flex-col">
-                  <span>09 - 11:59 AM sáng 09/05/2026</span>
+                  <span>09 - 11:59 sáng 09/05/2026</span>
                 </div>
               </div>
               <div className="flex items-center space-x-4">

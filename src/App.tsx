@@ -277,10 +277,14 @@ const App = () => {
           <div className="flex justify-center space-x-6 mb-8 text-red-600 opacity-60">
             <Cpu size={24} /> <Radio size={24} /> <Zap size={24} />
           </div>
-          <p className="text-black-600 font-serif tracking-[0.25em] mb-4 px-8 font-bold text-sm">
+          <p className="text-left text-black-600 font-serif tracking-[0.15em] mb-4 px-8 font-bold text-sm">
             Dear, 
-            To all my friends, colleagues, and loved ones who have been part of this incredible journey 
-            You are officially invited to join 
+          </p>
+          <p className="text-justify text-black-600 font-serif tracking-[0.15em] mb-4 px-8 font-bold text-sm">
+            To all my friends, colleagues, and loved ones who have been part of this incredible journey. 
+          </p>
+          <p className="text-left text-black-600 font-serif tracking-[0.15em] mb-4 px-8 font-bold text-sm">
+            You are officially invited to join!
           </p>
           <h1 className="text-7xl md:text-[10rem] font-black text-slate-900 leading-none mb-4 tracking-tighter">
             HUST <span className="text-red-600">26</span>
@@ -326,7 +330,7 @@ const App = () => {
       />
 
       <footer className="py-12 text-center border-t border-slate-100">
-        <p className="text-slate-400 font-mono text-xs tracking-[0.4em] mb-4">
+        <p className="text-slate-400 font-mono text-xs tracking-[0.2em] mb-4">
           Hanoi University of Science and Technology
         </p>
         <p className="text-slate-900 font-bold uppercase">
